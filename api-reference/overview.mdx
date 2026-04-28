@@ -1,0 +1,49 @@
+---
+title: API Reference Overview
+---
+
+# API Reference Overview
+
+A developer-friendly introduction to the API, with authentication details and sample requests.
+
+## Base URL
+
+All API requests use the base URL:
+
+```text
+https://api.example.com/v1
+```
+
+> Replace `api.example.com` with your production or sandbox host.
+
+## Authentication
+
+Use an API key for all requests. Send the key in the `Authorization` header.
+
+```http
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Request format
+
+- All requests use JSON
+- Set `Content-Type: application/json`
+- Set `Accept: application/json`
+
+## Sample request
+
+```bash
+curl "https://api.example.com/v1/items" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Example item","active":true}'
+```
+
+## Quick notes
+
+- Use `GET` for reads
+- Use `POST` to create resources
+- Use `PUT` or `PATCH` to update resources
+- Use `DELETE` to remove resources
+
+<Tip>Keep your API key secure and do not expose it in client-side code.</Tip>

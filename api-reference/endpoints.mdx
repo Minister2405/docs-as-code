@@ -1,0 +1,81 @@
+---
+title: API Endpoints
+---
+
+# API Endpoints
+
+This section shows example API endpoints with request and response examples.
+
+## List items
+
+**Method:** `GET`
+
+**URL:** `/v1/items`
+
+**Description:** Retrieve a list of items with pagination support.
+
+### Request
+
+```bash
+curl "https://api.example.com/v1/items?page=1&limit=10" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "data": [
+    {
+      "id": "item_123",
+      "name": "Example item",
+      "status": "active"
+    },
+    {
+      "id": "item_124",
+      "name": "Another item",
+      "status": "inactive"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 10,
+    "total": 42
+  }
+}
+```
+
+## Create an item
+
+**Method:** `POST`
+
+**URL:** `/v1/items`
+
+**Description:** Create a new item with a JSON payload.
+
+### Request
+
+```bash
+curl "https://api.example.com/v1/items" \
+  -X POST \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "New item",
+    "description": "A simple item for the API",
+    "active": true
+  }'
+```
+
+### Response
+
+```json
+{
+  "id": "item_125",
+  "name": "New item",
+  "description": "A simple item for the API",
+  "status": "active",
+  "created_at": "2026-04-28T12:00:00Z"
+}
+```
