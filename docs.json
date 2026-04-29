@@ -29,6 +29,10 @@
           "api-reference/overview",
           "api-reference/graphql"
         ]
+      },
+      {
+        "group": "REST API",
+        "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
       }
     ]
   },
