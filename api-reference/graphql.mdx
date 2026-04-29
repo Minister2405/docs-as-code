@@ -1,0 +1,98 @@
+# GraphQL API
+
+## Endpoint
+
+```bash
+POST https://api.example.com/graphql
+```
+
+<Note>
+GraphQL uses a single endpoint for all queries and mutations.
+</Note>
+
+## Authentication
+
+* Header: `Authorization: Bearer YOUR_API_KEY`
+* Content type: `application/json`
+
+## Queries
+
+```graphql
+query GetUsers {
+  users {
+    id
+    name
+    email
+  }
+}
+```
+
+## Mutations
+
+```graphql
+mutation CreateUser {
+  createUser(name: "John") {
+    id
+    name
+  }
+}
+```
+
+<Tabs>
+  <Tab title="cURL">
+
+```bash
+curl -X POST https://api.example.com/graphql \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ users { id name } }"}'
+```
+
+  </Tab>
+
+  <Tab title="JavaScript">
+
+```javascript
+fetch("https://api.example.com/graphql", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    query: `{ users { id name } }`
+  })
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+  </Tab>
+</Tabs>
+
+## Example Response
+
+```json
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "name": "John"
+      }
+    ]
+  }
+}
+```
+
+## Best Practices
+
+* Use GraphQL variables instead of hardcoded values for reusable queries.
+* Request only the fields you need to keep responses small.
+* Validate authentication tokens before sending requests.
+* Handle errors returned in the `errors` array alongside `data`.
+
+<Tip>
+Use GraphQL variables instead of hardcoding values in queries.
+</Tip>
+
