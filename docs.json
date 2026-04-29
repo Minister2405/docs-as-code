@@ -33,6 +33,10 @@
       {
         "group": "REST API",
         "pages": ["api-reference/rest"]
+      },
+      {
+        "group": "Events API",
+        "pages": ["api-reference/events"]
       }
     ]
   },

@@ -1,0 +1,18 @@
+asyncapi: "2.6.0"
+info:
+  title: Events API
+  version: "1.0.0"
+channels:
+  user.created:
+    subscribe:
+      summary: Event fired when a new user is created
+      message:
+        payload:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            email:
+              type: string
