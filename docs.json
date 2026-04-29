@@ -32,7 +32,7 @@
       },
       {
         "group": "REST API",
-        "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
+        "pages": ["api-reference/rest"]
       }
     ]
   },
