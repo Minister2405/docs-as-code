@@ -28,10 +28,7 @@
         "pages": [
           "api-reference/overview",
           "api-reference/graphql"
-        ],
-        "openapi": {
-          "source": "https://petstore3.swagger.io/api/v3/openapi.json"
-        }
+        ]
       }
     ]
   },
